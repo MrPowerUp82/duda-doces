@@ -7,21 +7,12 @@
   },
   "products": [
     {
-      "id": "brigadeiro-gourmet",
-      "name": "Brigadeiro Gourmet",
+      "id": "caixa-de-doces",
+      "name": "Caixa de doces.",
       "category": "Brigadeiros",
       "description": "Brigadeiro cremoso preparado com chocolate de qualidade e finalizado com granulado.",
-      "price": 4.5,
+      "price": 12,
       "image": "assets/images/brigadeiro.png",
-      "available": true
-    },
-    {
-      "id": "cupcake-chocolate",
-      "name": "Cupcake de Chocolate",
-      "category": "Cupcakes",
-      "description": "Massa fofinha de chocolate com cobertura cremosa, feita artesanalmente.",
-      "price": 9,
-      "image": "assets/images/cupcake.png",
       "available": true
     }
   ]
