@@ -18,7 +18,7 @@ async function loadMenu() {
 
 function renderStore() {
   const store = state.menu.store;
-  document.title = `${store.storeName} — Cardápio`;
+  document.title = `${store.storeName} — Doces Artesanais & Cardápio`;
   $('#brand-name').textContent = store.storeName;
   $('#footer-name').textContent = store.storeName;
   $('#hero-description').textContent = store.description;

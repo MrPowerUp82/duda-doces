@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="48" height="48" x="8" y="8" rx="22" fill="#f3b68f" transform="rotate(3 32 32)"/>
+  <rect width="48" height="48" x="6" y="6" rx="22" fill="#c94f69" transform="rotate(-4 30 30)"/>
+  <text x="29" y="38" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="800" font-size="32" fill="#ffffff">D</text>
+</svg>
