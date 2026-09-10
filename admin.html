@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin — Duda Doces</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+  <main class="login-shell" id="login-view">
+    <form class="login-card" id="login-form">
+      <a class="brand centered" href="index.html"><span class="brand-mark">D</span><span><strong>Duda Doces</strong><small>administração</small></span></a>
+      <p class="eyebrow">ÁREA RESTRITA</p>
+      <h1>Editar cardápio</h1>
+      <p>Entre com a senha de administração para acessar os produtos.</p>
+      <label>Senha <input id="admin-password" type="password" required autocomplete="current-password" autofocus></label>
+      <p class="form-error" id="login-error"></p>
+      <button class="primary-button full" type="submit">Entrar</button>
+      <a class="back-link" href="index.html">← Voltar para a loja</a>
+    </form>
+  </main>
+
+  <main class="admin-shell hidden" id="admin-view">
+    <header class="admin-header">
+      <div><p class="eyebrow">DUDA DOCES</p><h1>Editor do cardápio</h1></div>
+      <div class="admin-actions">
+        <label class="secondary-button file-button">Importar JSON<input id="import-file" type="file" accept="application/json,.json"></label>
+        <button class="primary-button" id="export-button" type="button">Baixar cardapio.json</button>
+        <button class="text-button" id="logout-button" type="button">Sair</button>
+      </div>
+    </header>
+
+    <div class="admin-notice"><strong>Como publicar:</strong> depois de editar, baixe o JSON, substitua <code>data/cardapio.json</code> no GitHub e faça o commit. O site será atualizado automaticamente.</div>
+
+    <section class="admin-card">
+      <div class="card-heading"><div><h2>Informações da loja</h2><p>Dados exibidos no site e usados nos pedidos.</p></div></div>
+      <div class="form-grid" id="settings-fields">
+        <label>Nome da loja <input data-setting="storeName"></label>
+        <label>WhatsApp (país + DDD + número) <input data-setting="whatsapp" inputmode="numeric"></label>
+        <label class="wide">Texto de apresentação <textarea data-setting="description" rows="2"></textarea></label>
+        <label class="wide">Mensagem do rodapé <input data-setting="footerMessage"></label>
+      </div>
+    </section>
+
+    <section class="admin-card">
+      <div class="card-heading">
+        <div><h2>Produtos</h2><p>Arraste não é necessário: use as setas para ordenar.</p></div>
+        <button class="secondary-button" id="add-product" type="button">+ Novo produto</button>
+      </div>
+      <div class="product-editor-list" id="product-editor-list"></div>
+    </section>
+  </main>
+
+  <template id="product-editor-template">
+    <article class="product-editor">
+      <div class="editor-topline">
+        <span class="drag-label">PRODUTO <b data-product-number></b></span>
+        <div class="editor-actions">
+          <button type="button" data-move="up" title="Mover para cima">↑</button>
+          <button type="button" data-move="down" title="Mover para baixo">↓</button>
+          <button type="button" data-remove class="danger-text">Excluir</button>
+        </div>
+      </div>
+      <div class="form-grid">
+        <label>Nome <input data-field="name" required></label>
+        <label>Categoria <input data-field="category" list="category-suggestions" required></label>
+        <label>Preço (R$) <input data-field="price" type="number" min="0" step="0.01" required></label>
+        <label>Imagem <input data-field="image" placeholder="assets/images/foto.png ou https://..."></label>
+        <label class="wide">Descrição <textarea data-field="description" rows="2"></textarea></label>
+        <label class="checkbox-label"><input data-field="available" type="checkbox"> Disponível no cardápio</label>
+      </div>
+    </article>
+  </template>
+  <datalist id="category-suggestions"></datalist>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

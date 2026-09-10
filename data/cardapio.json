@@ -1,0 +1,28 @@
+{
+  "store": {
+    "storeName": "Duda Doces",
+    "whatsapp": "5517991336927",
+    "description": "Encomendas fresquinhas, preparadas com ingredientes selecionados para adoçar seus melhores momentos.",
+    "footerMessage": "Doces artesanais para momentos especiais."
+  },
+  "products": [
+    {
+      "id": "brigadeiro-gourmet",
+      "name": "Brigadeiro Gourmet",
+      "category": "Brigadeiros",
+      "description": "Brigadeiro cremoso preparado com chocolate de qualidade e finalizado com granulado.",
+      "price": 4.5,
+      "image": "assets/images/brigadeiro.png",
+      "available": true
+    },
+    {
+      "id": "cupcake-chocolate",
+      "name": "Cupcake de Chocolate",
+      "category": "Cupcakes",
+      "description": "Massa fofinha de chocolate com cobertura cremosa, feita artesanalmente.",
+      "price": 9,
+      "image": "assets/images/cupcake.png",
+      "available": true
+    }
+  ]
+}

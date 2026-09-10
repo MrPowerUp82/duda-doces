@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f4">
+  <meta name="description" content="Doces artesanais feitos com carinho. Monte seu pedido e envie pelo WhatsApp.">
+  <title>Duda Doces — Cardápio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Duda Doces — início">
+      <span class="brand-mark">D</span>
+      <span><strong id="brand-name">Duda Doces</strong><small>feito à mão, com afeto</small></span>
+    </a>
+    <nav>
+      <a href="#cardapio">Cardápio</a>
+      <button class="cart-shortcut" id="cart-shortcut" type="button" aria-label="Abrir carrinho">
+        Sacola <span id="header-cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DOCES ARTESANAIS</p>
+        <h1>Um pedacinho de carinho em cada doce.</h1>
+        <p id="hero-description">Encomendas fresquinhas, preparadas com ingredientes selecionados para adoçar seus melhores momentos.</p>
+        <a class="primary-button" href="#cardapio">Ver o cardápio <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-blob"></span>
+        <img src="assets/images/cupcake.png" alt="">
+        <span class="hero-note">Feito<br><strong>com amor</strong></span>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ESCOLHA SEUS FAVORITOS</p>
+          <h2>Nosso cardápio</h2>
+        </div>
+        <p>Adicione à sacola e finalize seu pedido diretamente pelo WhatsApp.</p>
+      </div>
+      <div class="category-tabs" id="category-tabs" aria-label="Categorias"></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="empty-state">
+        <span>🍰</span>
+        <h3>Nenhum doce nesta categoria</h3>
+        <p>Veja as outras opções do nosso cardápio.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong id="footer-name">Duda Doces</strong>
+      <p id="footer-message">Doces artesanais para momentos especiais.</p>
+    </div>
+    <a href="admin.html" title="Área administrativa">Administrar cardápio</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Sua sacola" aria-hidden="true">
+    <div class="cart-header">
+      <div><p class="eyebrow">SEU PEDIDO</p><h2>Minha sacola</h2></div>
+      <button class="icon-button" id="close-cart" type="button" aria-label="Fechar sacola">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>🛍️</span><p>Sua sacola está vazia.</p></div>
+    <div class="checkout" id="checkout-area">
+      <div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+      <form id="checkout-form">
+        <label>Seu nome <input name="customerName" required autocomplete="name" placeholder="Como podemos chamar você?"></label>
+        <label>Celular <input name="customerPhone" required inputmode="tel" autocomplete="tel" placeholder="(17) 99999-9999"></label>
+        <label>Entrega
+          <select name="deliveryType" id="delivery-type">
+            <option value="Retirada">Vou retirar</option>
+            <option value="Entrega">Quero receber</option>
+          </select>
+        </label>
+        <label class="hidden" id="address-field">Endereço <input name="address" autocomplete="street-address" placeholder="Rua, número e bairro"></label>
+        <label>Forma de pagamento
+          <select name="payment">
+            <option>Pix</option><option>Dinheiro</option><option>Cartão</option>
+          </select>
+        </label>
+        <label>Observações <textarea name="notes" rows="2" placeholder="Ex.: sem granulado, horário desejado..."></textarea></label>
+        <button class="whatsapp-button" type="submit">Enviar pedido pelo WhatsApp</button>
+        <p class="checkout-hint">Você poderá conferir a mensagem antes de enviá-la.</p>
+      </form>
+    </div>
+  </aside>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
